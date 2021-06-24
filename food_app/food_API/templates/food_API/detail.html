@@ -1,0 +1,19 @@
+{% extends 'food_API/base.html' %}
+{% block title %}Description of item number {{ object.id }}{% endblock %}
+
+{% block body %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <img height="350px" src="{{ object.item_image }}" class="card"/>
+      </div>
+      <div class="col-md-6">
+        <h1>{{ object.item_name }}</h1>
+        <h2>{{ object.item_desc }}</h2>
+        <h3>{{ object.item_price }}</h3>
+        <h3>Added by: {{ object.user_name }}</h3>
+        <a href="{% url 'food_API:delete_item' object.id %}" class="btn btn-warning">Delete</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

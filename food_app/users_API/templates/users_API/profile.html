@@ -1,0 +1,10 @@
+{% extends 'food_API/base.html' %}
+
+{% block body %}
+  <h1>{{ user.username }}</h1>
+  {% if user.profile.image %}
+    <img height="150px" src="{{ user.profile.image.url }}">
+  {% else %}
+    <img src="/pictures/profilepic.jpg" height="150px">
+  {% endif %}
+{% endblock %}
